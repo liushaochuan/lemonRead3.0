@@ -1,0 +1,25 @@
+.el-main {
+  padding: 10px;
+}
+/*导航条与顶部距离设置,移动端导航条隐藏*/
+body {
+  position: relative;
+}
+#app,
+#app > div {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.animated {
+  animation-duration: 1s;
+}
+.click-hover {
+  cursor: pointer;
+}
+.click-hover:hover {
+  color: #fff;
+}

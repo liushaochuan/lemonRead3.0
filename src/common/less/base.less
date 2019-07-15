@@ -1,0 +1,102 @@
+
+/*---------------------- 兼容START -----------------------*/
+@charset "utf-8";
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  // font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+h1,h2,h3,h4,h5,h6{
+  font-weight: normal;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {content: '';content: none;}
+img,input{ border:none; font-size:0; vertical-align: top;}
+select{ border:none; outline: none;}
+a{ text-decoration:none; outline:none;}
+.clearfix:after{ content:"200B"; display:block; font-size:0; height:0; clear:both;}
+/*兼容IE6/7*/.clearfix:after{*zoom:1;}
+/*---------------------- 兼容End -----------------------*/
+html{
+  // font-family: 'Microsoft YaHei';
+  font-family:"Noto Sans CJK SC Light", "Source Han Sans CN Light";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  font-size: 1rem;
+  color: #333333;
+  text-align: center;
+}
+
+html {
+  font-size: 1rem;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+.halfPX{
+  position:relative;
+}
+
+.halfPX::after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 1px;
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(50%, transparent), color-stop(50%, #eee));
+  background-image: linear-gradient(0deg, transparent 50%, #eee 50%);
+}
+
+*{
+  font-family: 'Source Han Sans CN';
+}
