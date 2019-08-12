@@ -1,5 +1,5 @@
 <template>
-  <article class="box">
+  <div class="page-box">
     <main>
       <div class="big" v-for="d in list1" :key="d.companyNewId">
         <div class="cover"><img :src="d.coverKey" alt=""></div>
@@ -28,7 +28,7 @@
       <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page="queryData.currentPage" :page-sizes="10" :page-size="queryData.pageSize" layout="prev, pager, next" :total="total">
       </el-pagination>
     </footer>
-  </article>
+  </div>
 </template>
 
 <script>
@@ -94,24 +94,25 @@ export default {
 
 </script>
 <style lang='less' scoped>
-.box {
+.page-box {
   background-color: #f6f6f6;
 }
 main {
   width: 1200px;
   margin: 0 auto;
-  padding-top: 60px;
+  padding-top: 122px;
   p {
     text-align: left;
   }
   .more {
     width: 126px;
-    height: 35px;
+    height: 36px;
     box-sizing: border-box;
-    border: 1px solid #aaa;
-    color: #aaa;
-    font-size: 20px;
-    line-height: 33px;
+    border: 1px solid #BFBFBF;
+    color: #7e7e7e;
+    font-size: 16px;
+    line-height: 34px;
+    font-weight: 300;
     // text-overflow: ellipsis;
     // overflow: hidden;
   }
@@ -124,24 +125,32 @@ main {
     padding: 25px;
     margin-bottom: 25px;
     .cover {
+      box-sizing: border-box;
       width: 50%;
+      height: 377px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
       img {
         width: 100%;
       }
     }
     .text {
+      box-sizing: border-box;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       width: 50%;
-      padding-left: 15px;
+      padding: 20px 40px;
       .title {
-        font-size: 25px;
-        color: #555;
-        line-height: 35px;
+        font-size: 20px;
+        // color: #595757;
+        line-height: 36px;
+        font-weight: 700;
       }
       .previewContent {
-        color: #aaa;
+        color: #7E7E7E;
         font-size: 16px;
         line-height: 28px;
       }
@@ -166,19 +175,19 @@ main {
       width: 900px;
       padding: 0 15px;
       .title {
-        font-size: 25px;
-        color: #555;
+        font-size: 20px;
         line-height: 35px;
+        font-weight: 700;
         height: 35px;
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
       }
       .previewContent {
-        padding-top: 20px;
+        padding-top: 16px;
         width: 900px;
-        color: #aaa;
-        font-size: 16px;
+        color: #898989;
+        font-size: 18px;
         line-height: 28px;
         height: 28px;
         overflow: hidden;

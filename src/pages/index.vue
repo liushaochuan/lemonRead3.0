@@ -1,15 +1,17 @@
 <template>
   <div class="page-box">
     <div class="modle modle1">
-      <img src="http://advert.lemonread.com/%E7%BD%91%E7%AB%99%E9%A6%96%E9%A1%B5-1.png" alt="">
-      <article class="text">
-        <header>
-          <h3>柠檬悦读</h3>
-          <h1>21天，让孩子爱上阅读</h1>
-          <p>中英文智能分级阅读</p>
-        </header>
-        <div></div>
-      </article>
+      <div>
+        <img src="http://advert.lemonread.com/%E7%BD%91%E7%AB%99%E9%A6%96%E9%A1%B5-1.png" alt="">
+        <article class="text">
+          <header>
+            <h3>柠檬悦读</h3>
+            <h1>21天，让孩子爱上阅读</h1>
+            <p>——中英文智能分级阅读</p>
+          </header>
+          <div></div>
+        </article>
+      </div>
     </div>
     <div class="modle modle2">
       <article>
@@ -37,7 +39,9 @@
           <p>{{news.previewContent}}</p>
           <a href="" @click.prevent="goMovement">更多资讯 >>></a>
         </article>
-        <img :src="news.coverKey" alt="">
+        <div class="img-box">
+          <img :src="news.coverKey" alt="">
+        </div>
       </div>
     </div>
   </div>
@@ -69,22 +73,22 @@ export default {
     this.search()
   },
 
-  mounted() {
+  mounted () {
     window.addEventListener('scroll', this.windowScroll)
     this.aDom = document.querySelectorAll('.modle')
-    window.addEventListener('keydown', this.keydown)
-    window.addEventListener('mousewheel', this.mousewheel)
+    // window.addEventListener('keydown', this.keydown)
+    // window.addEventListener('mousewheel', this.mousewheel)
   },
-  beforeDestroy() {
+  beforeDestroy () {
     window.removeEventListener('scroll', this.windowScroll)
-    window.removeEventListener('keydown', this.keydown)
-    window.removeEventListener('mousewheel', this.mousewheel)
+    // window.removeEventListener('keydown', this.keydown)
+    // window.removeEventListener('mousewheel', this.mousewheel)
   },
 
   methods: {
     search () {
-      // let url = 'http://121.199.24.124:3300/website/getCompanyNewList?isIndex=1'
-      let url = 'http://api.lemonread.com/website/getCompanyNewList?isIndex=1'
+      let url = 'http://121.199.24.124:3300/website/getCompanyNewList?isIndex=1'
+      // let url = 'http://api.lemonread.com/website/getCompanyNewList?isIndex=1'
 
       axios.get(url).then(data => {
         if (data.errcode) return
@@ -96,45 +100,45 @@ export default {
         if (item.goLink) item.goLink({ link: "movement" })
       })
     },
-    windowScroll() {
+    windowScroll () {
       let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
-      if(scrollTop > 30) {
+      if (scrollTop > 30) {
         // this.aDom[1].getElementsByTagName
         this.aDom[1].classList.add('active')
       }
     },
-    keydown(ev) {
+    keydown (ev) {
       const now = Date.now()
-      if(now - this.keydownTime < 300) return
+      if (now - this.keydownTime < 300) return
       this.keydownTime = now
       console.log(ev.keyCode)
-      if(ev.keyCode == 38) {
+      if (ev.keyCode == 38) {
         // 上
         ev.preventDefault()
-        if(this.index == 0) return
-        this.aDom[--this.index].scrollIntoView({behavior: 'smooth', block: 'center'})
-      } else if(ev.keyCode == 40){
+        if (this.index == 0) return
+        this.aDom[--this.index].scrollIntoView({ behavior: 'smooth', block: 'center' })
+      } else if (ev.keyCode == 40) {
         // 下
         ev.preventDefault()
-        if(this.index == this.aDom.length - 1) return
-        this.aDom[++this.index].scrollIntoView({behavior: 'smooth', block: 'center'})
+        if (this.index == this.aDom.length - 1) return
+        this.aDom[++this.index].scrollIntoView({ behavior: 'smooth', block: 'center' })
       }
     },
-    mousewheel(ev) {
+    mousewheel (ev) {
       ev.preventDefault()
       const now = Date.now()
-      if(now - this.mousewheelTime < 300) return
+      if (now - this.mousewheelTime < 300) return
       this.mousewheelTime = now
-      if(ev.wheelDeltaY > 0) {
+      if (ev.wheelDeltaY > 0) {
         // 上
-        if(this.index == 0) return
-        this.aDom[--this.index].scrollIntoView({behavior: 'smooth', block: 'center'})
-      } else if(ev.wheelDeltaY < 0){
+        if (this.index == 0) return
+        this.aDom[--this.index].scrollIntoView({ behavior: 'smooth', block: 'center' })
+      } else if (ev.wheelDeltaY < 0) {
         // 下
-        if(this.index == this.aDom.length - 1) {
-          document.querySelector('.footer').scrollIntoView({behavior: 'smooth', block: 'center'})
-        } else 
-        this.aDom[++this.index].scrollIntoView({behavior: 'smooth', block: 'center'})
+        if (this.index == this.aDom.length - 1) {
+          document.querySelector('.footer').scrollIntoView({ behavior: 'smooth', block: 'center' })
+        } else
+          this.aDom[++this.index].scrollIntoView({ behavior: 'smooth', block: 'center' })
       }
     }
   }
@@ -147,12 +151,17 @@ export default {
 }
 .modle1 {
   height: 796px;
-  position: relative;
   background-color: #f2f2f2;
+  div {
+    position: relative;
+    width: 1200px;
+    height: 796px;
+    margin: 0 auto;
+  }
   img {
     position: absolute;
-    left: 200px;
     bottom: 0;
+    left: 0;
     animation: img1 2s;
   }
   @keyframes img1 {
@@ -162,44 +171,40 @@ export default {
   }
   .text {
     position: absolute;
-    right: 200px;
+    right: 0px;
     top: 285px;
     text-align: left;
     animation: textbox 2s;
     h3 {
-      font-size: 40px;
+      font-size: 50px;
       line-height: 60px;
-      font-weight: 700;
-      color: #2a2a2a;
     }
     h1 {
       font-size: 50px;
-      line-height: 75px;
+      line-height: 100px;
       font-weight: 700;
-      color: #2a2a2a;
     }
     p {
-      font-size: 25px;
-      line-height: 70px;
-      color: #222;
+      font-size: 30px;
+      line-height: 48px;
     }
     div {
       position: absolute;
       width: 520px;
       height: 210px;
-      background-color: rgba(242,242,242, 0);
+      background-color: rgba(242, 242, 242, 0);
       top: 0;
       right: 0;
       animation: textshow 1s;
     }
     @keyframes textshow {
       from {
-        background-color: rgba(242,242,242, 1);
+        background-color: rgba(242, 242, 242, 1);
       }
     }
   }
   @keyframes textbox {
-    from{
+    from {
       top: 315px;
     }
   }
@@ -214,19 +219,18 @@ export default {
     header {
       h3 {
         font-size: 40px;
-        color: #2c2c2c;
         line-height: 60px;
       }
       h1 {
         font-size: 40px;
-        color: #2a2a2a;
         font-weight: 700;
         line-height: 60px;
       }
       p {
         padding-top: 10px;
         a {
-          color: #298ba4;
+          color: #047F9F;
+          font-size: 18px;
         }
       }
     }
@@ -257,7 +261,7 @@ export default {
 }
 .modle2.active {
   article {
-    animation: article2 2s
+    animation: article2 2s;
   }
   .img1 {
     animation: img2_1 2s;
@@ -267,13 +271,19 @@ export default {
   }
 }
 @keyframes article2 {
-  from {padding-top: 300px}
+  from {
+    padding-top: 300px;
+  }
 }
 @keyframes img2_1 {
-  from { top: 100%; }
+  from {
+    top: 100%;
+  }
 }
 @keyframes img2_2 {
-  from { top: 100%; }
+  from {
+    top: 100%;
+  }
 }
 .modle3 {
   display: flex;
@@ -288,17 +298,17 @@ export default {
     margin-right: 10px;
     overflow: hidden;
     h1 {
-      font-size: 30px;
-      line-height: 45px;
+      font-size: 40px;
+      line-height: 60px;
       font-weight: 700;
       margin-top: 75px;
     }
     p {
       font-size: 20px;
-      line-height: 30px;
+      line-height: 60px;
     }
     img {
-      margin-top: 40px;
+      margin-top: 24px;
     }
   }
   .right {
@@ -314,32 +324,55 @@ export default {
       height: 50%;
       header {
         h1 {
-          font-size: 30px;
-          line-height: 45px;
+          font-size: 34px;
+          line-height: 64px;
           font-weight: 700;
+          height: 64px;
+          overflow: hidden;
+          color: #131313;
         }
         h3 {
           font-size: 20px;
           line-height: 30px;
           font-weight: 700;
+          height: 30px;
+          overflow: hidden;
+          color: #111;
+          // white-space: nowrap;
+          text-overflow: ellipsis;
         }
       }
       p {
-        font-size: 16px;
-        line-height: 24px;
+        font-size: 18px;
+        line-height: 30px;
+        height: 90px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box; /*元素作为box伸缩盒子*/
+        -webkit-line-clamp: 3; /*设置文本行数限制*/
+        -webkit-box-orient: vertical; /*设置文本排列方式*/
         text-align: left;
         text-indent: 2em;
         margin-top: 20px;
       }
       a {
-        color: #298ba4;
-        font-size: 16px;
-        line-height: 30px;
+        color: #047F9F;
+        font-size: 18px;
+        line-height: 80px;
       }
     }
-    img {
+    .img-box {
       width: 80%;
-      height: 50%;
+      height: 256px;
+      min-width: 500px;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      img {
+        width: 100%;
+      }
     }
   }
 }

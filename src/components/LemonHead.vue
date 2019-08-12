@@ -3,9 +3,7 @@
   <div class="layout">
     <div class="head-box">
       <div class="left" @click="goLink(linkList[0])">
-        <img src="http://website.lemonread.com/logo.png" class="head-item head-item-huge" alt="柠檬,博阅,柠檬悦读,柠檬阅读,阅读,学生阅读,分级阅读,阅读习惯,K12教育,小柠檬教育科技,让孩子爱上阅读">
-        <img src="http://website.lemonread.com/slogan.png" class="head-item head-item-huge" style="margin-left: 20px;">
-        <img :src="logoV" class="head-item head-item-large">
+        <img src="http://website.lemonread.com/logo.png" class="head-item head-item-huge">
       </div>
         <ul class="link-ul">
           <li v-for="(item,index) in linkList" :key="index" class="link-item" @click="goLink(item)">
@@ -94,7 +92,7 @@ export default {
 .layout {
   position: fixed;
   background-color: #fff;
-  height: 90px;
+  height:84px;
   top: 0;
   z-index: 2019;
 }
@@ -121,7 +119,6 @@ export default {
       letter-spacing: 2px;
       font-weight: 100;
       position: relative;
-
       .link-border {
         display: block;
         width: 8px;
@@ -158,8 +155,9 @@ export default {
 
   .head-item {
     /* color: #5A5A5A; */
-    height: 50px;
-    line-height: 50px;
+    height: 43px;
+    width: 120px;
+    // line-height: 50px;
     cursor: pointer;
   }
   .link-ul {
@@ -172,30 +170,21 @@ export default {
 
   .link-title {
     padding: 0 20px;
+    box-sizing: border-box;
     /* color: #5A5A5A; */
     font-family:"Noto Sans CJK SC DemiLight", "Source Han Sans CN DemiLight";
-    color: #5A5A5A;
+    color: #7E7E7E;
     letter-spacing: 2px;
-    font-weight: 100;
-  }
-
-  .link-border {
-    display: block;
-    width: 100%;
-    height: 3px;
-    border-bottom: 3px solid #FECC01;
-  }
-
-  .link-title {
-    box-sizing: border-box;
-    border-bottom: 3px solid #fff;
+    font-weight: 300;
+    font-size: 18px;
   }
   .link-title:hover {
-    border-bottom: 3px solid #ffe235;
+    color: #000;
     transition: .5s;
+    cursor: pointer;
   }
   .link-title.active {
-    border-bottom: 3px solid #ffe235;
+    color: #000;
   }
 
   .head-large {

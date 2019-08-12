@@ -39,7 +39,7 @@ export default {
 
 </script>
 <style>
-@import 'common/less/base.less';
+@import 'common/less/base.css';
 @import 'assets/iconfont/iconfont';
 #app {
 	text-align: center;

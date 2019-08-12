@@ -1,9 +1,9 @@
 <template>
   <main>
     <lemon-head></lemon-head>
-    <article class="content">
+    <div class="content">
       <router-view></router-view>
-    </article>
+    </div>
     <lemon-foot class="foot"></lemon-foot>
   </main>
 </template>
@@ -30,6 +30,6 @@ export default {
 </script>
 <style lang='less' scoped>
 .content {
-  margin-top: 90px;
+  margin-top: 84px;
 }
 </style>

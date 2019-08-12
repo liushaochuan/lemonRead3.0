@@ -24,7 +24,7 @@ export default new Router({
         {
           path: 'smart',
           name: 'smart',
-          component: resolve => require(['@/pages/smart2'], resolve)
+          component: resolve => require(['@/pages/smart'], resolve)
         },
         {
           path: 'trial',
@@ -59,27 +59,6 @@ export default new Router({
         }
       ]
     },
-    
-    // {
-    //   path: '/index',
-    //   name: 'index',
-    //   component: resolve => require(['@/pages/index'], resolve)
-    // },
-    // {
-    //   path: '/about',
-    //   name: 'about',
-    //   component: resolve => require(['@/pages/about'], resolve)
-    // },
-    // {
-    //   path: '/download',
-    //   name: 'download',
-    //   component: resolve => require(['@/pages/download'], resolve)
-    // },
-    // {
-    //   path: '/smart',
-    //   name: 'smart',
-    //   component: resolve => require(['@/pages/smart'], resolve)
-    // },
     // {
     //   path: '/trial',
     //   name: 'trial',
@@ -110,59 +89,5 @@ export default new Router({
       name: 'appDownloadAll',
       component: resolve => require(['@/pages/appDownloadAll'], resolve)
     },
-
-
-
-    // {
-    //     path: '/news',
-    //     name: 'news',
-    //     component: resolve => require(['@/pages/news'], resolve)
-    // }, 
-    // {
-    //     path: '/newsDtail',
-    //     name: '/newsDtail',
-    //     component: resolve => require(['@/pages/newsDtail'], resolve)
-    // }, 
-    // {
-    //     path: '/newsDtailImg',
-    //     name: '/newsDtailImg',
-    //     component: resolve => require(['@/pages/newsDtailImg'], resolve)
-    // }, 
-    // {
-    //     path: '/join',
-    //     name: 'join',
-    //     component: resolve => require(['@/pages/join'], resolve)
-    // }, 
-    // {
-    //     path: '/product',
-    //     name: 'product',
-    //     component: resolve => require(['@/pages/product'], resolve)
-    // }, 
-    // {
-    //     path: '/guide',
-    //     name: 'guide',
-    //     component: resolve => require(['@/pages/guide'], resolve)
-    // },
-    // {
-    // 	path: '/game',
-    // 	name: 'game',
-    // 	component:resolve=>require(['@/pages/game'],resolve)
-    // }, {
-    // 	path: '/admin',
-    // 	name: 'admin',
-    // 	component:resolve=>require(['@/pages/admin/admin'],resolve)
-    // }, {
-    // 	path: '/sensitiveWord',
-    // 	name: 'sensitiveWord',
-    // 	component:resolve=>require(['@/pages/admin/sensitiveWord'],resolve)
-    // }, {
-    // 	path: '/signupLog',
-    // 	name: 'signupLog',
-    // 	component:resolve=>require(['@/pages/admin/signupLog'],resolve)
-    // }, {
-    // 	path: '/accessLog',
-    // 	name: 'accessLog',
-    // 	component:resolve=>require(['@/pages/admin/accessLog'],resolve)
-    // },
   ],
 })

@@ -4,34 +4,30 @@
     <div class="content">
       <div class="item">
         <p class="title">柠檬悦读学生端APP</p>
-        <div class="down-btn">
-          <el-popover placement="top" trigger="hover" :enterable="false">
-            <img style="width: 200px; margin: 0 auto" src="http://website.lemonread.com/studentsCode.png" alt="">
-            <el-button type="text" slot="reference">
-              <span class="btn-text">立即下载</span>
-            </el-button>
-          </el-popover>
-        </div>
+        <el-tooltip placement="right" effect="light" :offset="30">
+          <div slot="content">
+            <img style="width: 80px; height: 80px; margin: -8px" src="http://website.lemonread.com/studentsCode.png" alt="">
+          </div>
+          <span class="down-btn">立即下载</span>
+        </el-tooltip>
       </div>
       <div class="item">
         <p class="title">柠檬悦读教师端APP</p>
-        <div class="down-btn">
-          <el-popover placement="top" trigger="hover" :enterable="false">
-            <img style="width: 200px; margin: 0 auto" src="http://website.lemonread.com/teachersCode.png" alt="">
-              <span class="btn-text" slot="reference">立即下载</span>
-          </el-popover>
-        </div>
+        <el-tooltip placement="right" effect="light" :offset="30">
+          <div slot="content">
+            <img style="width: 80px; height: 80px; margin: -8px" src="http://website.lemonread.com/teachersCode.png" alt="">
+          </div>
+          <span class="down-btn">立即下载</span>
+        </el-tooltip>
       </div>
       <div class="item">
         <p class="title">柠檬悦读家长端APP</p>
-        <div class="down-btn">
-          <el-popover placement="top" trigger="hover" :enterable="false">
-            <img style="width: 200px; margin: 0 auto" src="http://website.lemonread.com/parentsCode.png" alt="">
-            <el-button type="text" slot="reference">
-              <span class="btn-text">立即下载</span>
-            </el-button>
-          </el-popover>
-        </div>
+        <el-tooltip placement="right" effect="light" :offset="30">
+          <div slot="content">
+            <img style="width: 80px; height: 80px; margin: -8px" src="http://website.lemonread.com/parentsCode.png" alt="">
+          </div>
+          <span class="down-btn">立即下载</span>
+        </el-tooltip>
       </div>
       <div class="item2">
         <p class="title">联系我们</p>
@@ -55,12 +51,16 @@
           <span><a target="_blank" href="http://website.lemonread.com/lemomPublicationBusinessLicense.png">出版物经营许可证</a></span>
         </p>
         <div class="about">
-          <div>关注我们</div>
-          <el-popover v-model="show" placement="top" trigger="click" width="150" :enterable="false">
-            <img style="width: 150px;" src="http://website.lemonread.com/weixin.jpg" alt="">
-            <div class="weixin wei" slot="reference" @hover="show = true"></div>
-          </el-popover>
-          <a target="_blank" href="https://weibo.com/6563412120/profile?topnav=1&wvr=6"><div class="weibo wei"></div></a>
+          <div class="about-me">关注我们</div>
+          <el-tooltip placement="top" effect="light">
+            <div slot="content">
+              <img style="width: 80px; height: 80px; margin: -8px" src="http://website.lemonread.com/weixin.jpg" alt="">
+            </div>
+            <div class="weixin wei"></div>
+          </el-tooltip>
+          <a target="_blank" href="https://weibo.com/6563412120/profile?topnav=1&wvr=6">
+            <div class="weibo wei"></div>
+          </a>
         </div>
       </div>
       <div></div>
@@ -83,41 +83,40 @@ export default {
   width: 100%;
   height: 270px;
   position: relative;
-  background-color: #eee;
+  background-color: #eeeeee;
+  font-weight: 300;
   .content {
     height: 210px;
     width: 1200px;
     margin: 0 auto;
-    // margin-top: 80px;
+    margin-top: 80px;
     display: flex;
     justify-content: space-between;
     .item {
+      font-size: 16px;
       height: 100%;
+      text-align: left;
       .title {
         font-size: 18px;
         font-weight: 700;
         line-height: 40px;
         margin-top: 70px;
-        color: #292929;
+        color: #2a2a2a;
       }
       .down-btn {
+        padding: 0px 20px;
         font-size: 16px;
-        height: 22px;
-        line-height: 22px;
+        line-height: 24px;
+        height: 60px;
         color: #2a2a2a;
-        border: 1px solid #2a2a2a;
-        width: 120px;
+        border: 1px solid #898989;
+        width: 110px;
         border-radius: 14px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        .btn-text {
-          color: #100806;
-        }
       }
       .down-btn:hover {
         border: 1px solid #ffe226;
         background-color: #ffe226;
+        cursor: pointer;
       }
     }
     .item2 {
@@ -129,9 +128,10 @@ export default {
         line-height: 40px;
       }
       .phone {
-        font-size: 25px;
+        font-style: italic;
+        font-size: 24px;
         font-weight: 700;
-        color: #a8a8a8;
+        color: #a6a6a6;
         line-height: 40px;
         margin-bottom: 10px;
       }
@@ -143,7 +143,7 @@ export default {
   }
   .footer {
     height: 70px;
-    background-color: #fff;
+    background-color: #f3f3f3;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -155,19 +155,22 @@ export default {
     }
     .link {
       font-size: 16px;
-      color: #666;
+      color: #575757;
       a {
-        color: #666;
+        color: #575757;
       }
       .jiange {
         padding: 0 10px;
       }
     }
     .about {
+      .about-me {
+        font-size: 16px;
+      }
       display: flex;
       justify-content: space-around;
       align-items: center;
-      color: #aaa;
+      color: #919191;
       width: 210px;
       .wei {
         width: 47px;
@@ -175,7 +178,8 @@ export default {
         border-radius: 50%;
       }
       .weixin {
-        background: url(http://webview.lemonread.com/%E6%9C%AA%E6%A0%87%E9%A2%98-1.png) no-repeat;
+        background: url(http://webview.lemonread.com/%E6%9C%AA%E6%A0%87%E9%A2%98-1.png)
+          no-repeat;
         background-position: -94px 0px;
       }
       .weixin:hover {
@@ -183,7 +187,8 @@ export default {
         cursor: pointer;
       }
       .weibo {
-        background: url(http://webview.lemonread.com/%E6%9C%AA%E6%A0%87%E9%A2%98-1.png) no-repeat;
+        background: url(http://webview.lemonread.com/%E6%9C%AA%E6%A0%87%E9%A2%98-1.png)
+          no-repeat;
         background-position: -0px 0px;
       }
       .weibo:hover {

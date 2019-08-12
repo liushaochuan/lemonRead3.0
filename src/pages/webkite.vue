@@ -1,7 +1,7 @@
 <template>
-  <article class="page-box">
-    <main v-html="content"></main>
-  </article>
+  <div class="page-box">
+    <div class="content" v-html="content"></div>
+  </div>
 </template>
 
 <script>
@@ -13,9 +13,6 @@ export default {
     };
   },
 
-  components: {},
-
-  computed: {},
 
   created () {
     this.content = this.$route.params.content
@@ -27,12 +24,16 @@ export default {
 </script>
 <style lang='less' scoped>
 .page-box {
-  width: 1200px;
-  margin: 0 auto;
   text-align: left;
-  main {
+  background-color: #f3f3f3;
+  padding: 100px;
+  .content {
+    padding: 65px;
+    max-width: 1200px;
+    margin: 0 auto;
     padding-top: 55px;
     line-height: 24px;
+    background-color: #fff;
   }
 }
 </style>
