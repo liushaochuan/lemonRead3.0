@@ -7,10 +7,10 @@
         <div class="article">
           <div class="header">
             <h1>柠檬悦读1</h1>
-            <h3>超值好礼，黑马神器。</h3>
+            <h3>超值好礼，黑马神器</h3>
           </div>
           <p>经典黑，线条流畅圆润，电子墨水屏，双语书城，</p>
-          <p>中英文移动课堂。</p>
+          <p>中英文移动课堂</p>
           <div class="btn" @click="goBuy('https://item.jd.com/38606608398.html')">购买</div>
           <a target="_blank" href="https://mall.jd.com/view_search-1048329.html">进一步了解></a>
         </div>
@@ -315,11 +315,11 @@ export default {
     transition: 1s;
     -webkit-transition: 1s;
   }
-  .img1:hover {
-    top: 0px;
-    transform: rotate(33.5deg);
-    -webkit-transform: rotate(33.5deg);
-  }
+  // .img1:hover {
+  //   top: 0px;
+  //   transform: rotate(33.5deg);
+  //   -webkit-transform: rotate(33.5deg);
+  // }
   .img2 {
     top: -220px;
     left: 50px;

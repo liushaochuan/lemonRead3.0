@@ -21,12 +21,12 @@
         </el-tooltip>
       </div>
       <div class="item">
-        <p class="title">柠檬悦读家长端APP</p>
+        <p class="title">柠檬悦读微信家长端</p>
         <el-tooltip placement="right" effect="light" :offset="30">
           <div slot="content">
-            <img style="width: 80px; height: 80px; margin: -8px" src="http://website.lemonread.com/parentsCode.png" alt="">
+            <img style="width: 80px; height: 80px; margin: -8px" src="http://webview.lemonread.com/parentsPublicCode.jpg" alt="">
           </div>
-          <span class="down-btn">立即下载</span>
+          <span class="down-btn">立即关注</span>
         </el-tooltip>
       </div>
       <div class="item2">

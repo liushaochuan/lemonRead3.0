@@ -21,7 +21,7 @@
       <div class="list">
         <div class="item" v-for="item in list" :key="item.title" :style="{'background-color': item.color}">
           <img :src="item.img" alt="" :style="{'background-color': item.color}">
-          <header>{{item.title}}</header>
+          <header class="header">{{item.title}}</header>
           <p v-for="p in item.content" :key="p">{{p}}</p>
         </div>
       </div>
@@ -41,7 +41,7 @@ export default {
         { title: '决策支持', content: ['根据数据表现，', '老师为学生提供更具针对性的阅读指导和规划'], color: '#fdd6d7', img: 'http://webview.lemonread.com/%E6%A0%A1%E5%9B%AD%E6%96%B9%E6%A1%88-3.png' },
         { title: '信息中台', content: ['在校园数字化过程中，', '成为全校师生阅读数据汇总和处理中台'], color: '#e5e5e5', img: 'http://webview.lemonread.com/%E6%A0%A1%E5%9B%AD%E6%96%B9%E6%A1%88-4.png' },
       ],
-      parentImgs: ['http://website.lemonread.com/master01.png', 'http://website.lemonread.com/master02.png'],
+      parentImgs: ['http://webview.lemonread.com/school_01.jpg', 'http://webview.lemonread.com/school_02.jpg', 'http://webview.lemonread.com/school_03.jpg'],
       index: 0,
       keydownTime: 0,
       mousewheelTime: 0,

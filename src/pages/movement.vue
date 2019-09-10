@@ -1,6 +1,6 @@
 <template>
   <div class="page-box">
-    <main>
+    <div class="main">
       <div class="big" v-for="d in list1" :key="d.companyNewId">
         <div class="cover"><img :src="d.coverKey" alt=""></div>
         <div class="text">
@@ -23,7 +23,7 @@
           了解更多 >>
         </div>
       </div>
-    </main>
+    </div>
     <footer>
       <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page="queryData.currentPage" :page-sizes="10" :page-size="queryData.pageSize" layout="prev, pager, next" :total="total">
       </el-pagination>
@@ -97,7 +97,7 @@ export default {
 .page-box {
   background-color: #f6f6f6;
 }
-main {
+.main {
   width: 1200px;
   margin: 0 auto;
   padding-top: 122px;
@@ -126,7 +126,7 @@ main {
     margin-bottom: 25px;
     .cover {
       box-sizing: border-box;
-      width: 50%;
+      width: 575px;
       height: 377px;
       display: flex;
       justify-content: center;
@@ -134,6 +134,8 @@ main {
       overflow: hidden;
       img {
         width: 100%;
+        height: 100%;
+        margin: auto;
       }
     }
     .text {
@@ -160,14 +162,18 @@ main {
     background-color: #fff;
     display: flex;
     padding: 15px;
-    border-bottom: 1px solid #aaa;
+    border-bottom: 1px solid #ededed;
     align-items: center;
     .cover {
       width: 104px;
       height: 104px;
+      overflow: hidden;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
       img {
-        width: 104px;
-        height: 104px;
+        width: 100%;
+        height: 100%;
         border-radius: 10px;
       }
     }

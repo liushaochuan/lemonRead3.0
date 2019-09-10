@@ -3,7 +3,8 @@
   <div class="layout">
     <div class="head-box">
       <div class="left" @click="goLink(linkList[0])">
-        <img src="http://website.lemonread.com/logo.png" class="head-item head-item-huge">
+        <!-- <img src="http://website.lemonread.com/logo.png" class="head-item head-item-huge"> -->
+        <img src="http://webview.lemonread.com/lemonread-logo.png" class="head-item">
       </div>
         <ul class="link-ul">
           <li v-for="(item,index) in linkList" :key="index" class="link-item" @click="goLink(item)">
@@ -149,14 +150,14 @@ export default {
 .head-box {
   width: 1200px;
   margin: 0 auto;
-  padding: 20px 0;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   .head-item {
     /* color: #5A5A5A; */
-    height: 43px;
-    width: 120px;
+    // height: 43px;
+    // width: 120px;
     // line-height: 50px;
     cursor: pointer;
   }

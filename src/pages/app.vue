@@ -82,27 +82,27 @@
         </el-carousel>
       </div>
       <div class="text-box">
-        <div class="header">柠檬悦读家长端</div>
-        <p class="intordution">以智能分级阅读为核心，语文英语两手抓，课内课外同步提升</p>
+        <div class="header">柠檬悦读微信家长端</div>
+        <p class="intordution">实时反馈孩子阅读学习数据，陪伴孩子提高和成长</p>
         <p class="intorItem">
           <span>
             <img src="../images/index/speciality.png" class="speciality-icon" />
-            智能分级书城
+            学习数据报告
           </span>
           <span>
             <img src="../images/index/speciality.png" class="speciality-icon" />
-            教材同步学习
+            家长管控
           </span>
           <span>
             <img src="../images/index/speciality.png" class="speciality-icon" />
-            拓展分级阅读训练
+            分享互动
           </span>
         </p>
         <div class="download">
           <el-popover placement="right" trigger="hover">
             <img style="width: 150px" src="http://webview.lemonread.com/parentsPublicCode.jpg" alt="">
             <el-button type="text" slot="reference">
-              <span class="btn-text">柠檬悦读家长端公众号</span>
+              <span class="btn-text">关注柠檬悦读微信家长端</span>
             </el-button>
           </el-popover>
         </div>
@@ -135,12 +135,12 @@ export default {
         'http://webview.lemonread.com/APP-1.png'
       ],
       studentImgs: [
-        'http://website.lemonread.com/students00.jpg',
-        'http://website.lemonread.com/student01.png',
-        'http://website.lemonread.com/student02.png',
-        'http://website.lemonread.com/student03.png',
-        'http://website.lemonread.com/student04.png',
-        'http://website.lemonread.com/student05.png',
+        'http://webview.lemonread.com/student_1.jpg',
+        'http://webview.lemonread.com/student_2.jpg',
+        'http://webview.lemonread.com/student_3.jpg',
+        'http://webview.lemonread.com/student_4.jpg',
+        'http://webview.lemonread.com/student_5.jpg',
+        'http://webview.lemonread.com/student_6.jpg',
       ],
       studentList: [
         ['阅读测评', '根据测评结果', '推荐合适书籍'],
@@ -149,9 +149,12 @@ export default {
         ['任务中心', '签到、阅读激励', '助力阅读习惯养成'],
         ['书圈互动', '随时随地与教师、同学在级交流，分享阅读心得'],
       ],
-      parentImgs: ["http://website.lemonread.com/parent01.png",
-        "http://website.lemonread.com/parent02.png",
-        "http://website.lemonread.com/parent03.png"],
+      parentImgs: [
+        "http://webview.lemonread.com/parent_1.jpg",
+        "http://webview.lemonread.com/parent_2.jpg",
+        // "http://webview.lemonread.com/parent_3.jpg",
+        "http://webview.lemonread.com/parent_4.jpg",
+      ],
       parentList: [
         '孩子阅读情况实时监管',
         '孩子阅读轨迹实时查看',
@@ -512,7 +515,7 @@ export default {
     }
     .imgs {
       position: absolute;
-      top: 25px;
+      top: 24px;
       left: 20px;
       width: 90%;
       img {
@@ -582,7 +585,7 @@ export default {
     }
     .imgs {
       position: absolute;
-      top: 25px;
+      top: 24px;
       left: 20px;
       width: 90%;
       img {

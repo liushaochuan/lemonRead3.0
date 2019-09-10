@@ -26,9 +26,9 @@
     </div>
     <div class="modle modle3">
       <div class="left">
-        <h1>柠檬悦读家长端</h1>
+        <h1>柠檬悦读微信家长端</h1>
         <p>同步孩子的阅读轨迹，陪伴成长</p>
-        <img src="http://webview.lemonread.com/%E7%BD%91%E7%AB%99%E9%A6%96%E9%A1%B5-4.png" alt="">
+        <img @click="goApp" src="http://webview.lemonread.com/%E7%BD%91%E7%AB%99%E9%A6%96%E9%A1%B5-4.png" alt="">
       </div>
       <div class="right">
         <article>
@@ -98,6 +98,11 @@ export default {
     goMovement () {
       this.$parent.$children.forEach(item => {
         if (item.goLink) item.goLink({ link: "movement" })
+      })
+    },
+    goApp() {
+      this.$parent.$children.forEach(item => {
+        if (item.goLink) item.goLink({ link: "app" })
       })
     },
     windowScroll () {
@@ -244,7 +249,6 @@ export default {
   }
   .img1:hover {
     left: 30%;
-    top: 150px;
   }
 
   .img2 {
@@ -286,6 +290,7 @@ export default {
   }
 }
 .modle3 {
+  height: 600px;
   display: flex;
   justify-content: space-between;
   div {
@@ -309,15 +314,16 @@ export default {
     }
     img {
       margin-top: 24px;
+      cursor: pointer;
     }
   }
   .right {
     overflow: hidden;
     margin-left: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: space-between;
+    // align-items: center;
     article {
       padding: 65px 130px 30px 130px;
       box-sizing: border-box;
@@ -358,14 +364,14 @@ export default {
       a {
         color: #047F9F;
         font-size: 18px;
-        line-height: 80px;
+        line-height: 45px;
       }
     }
     .img-box {
       width: 80%;
-      height: 256px;
+      height: 260px;
       min-width: 500px;
-      margin: 0;
+      margin: 20px auto 0;
       display: flex;
       justify-content: center;
       align-items: center;
